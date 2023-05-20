@@ -36,5 +36,9 @@ def get_timezones():
     # Return the list of time zones as a JSON response
     return jsonify({'timezones': timezones})
 
+@app.route('/example', methods=['GET'])
+def get_timezones():
+    return "This is an example endpoint!"
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")
