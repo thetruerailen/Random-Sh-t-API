@@ -19,12 +19,16 @@ We do not have a public URL yet, sorry!
 - **Endpoint**: `/time/timezones`
 - **Method**: `GET`
 - **Description**: Retrieves the current time in the specified time zone.
+----
+- **Endpoint**: `/example`
+- **Method**: `GET`
+- **Description**: This is an example endpoint for others to use as a template.
+----
+- **Endpoint**: `/random-item`
+- **Method**: `GET`
+- **Description**: Display's a random item's name (Feel free to add to the random item list)
 
-#### Parameters
-
-| Parameter  | Type   | Description                                     |
-|------------|--------|-------------------------------------------------|
-| `timezone` | string | (Optional) The time zone to retrieve the time.  |
+## /time Endpoint
 
 #### Example
 
@@ -48,3 +52,29 @@ GET /time/timezones
     ...
   ]
 }
+```
+
+
+## /example Endpoint
+
+#### Example
+
+GET /example
+
+
+##### Response
+
+```json
+This is an example endpoint!
+```
+
+## /random-item Endpoint
+
+#### Example
+
+GET /random-item
+
+
+##### Response
+
+This is random and could very!
