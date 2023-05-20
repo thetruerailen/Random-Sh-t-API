@@ -4,6 +4,8 @@ import pytz
 
 app = Flask(__name__)
 
+random_items = ['apple', 'banana', 'orange', 'grape', 'watermelon']
+
 @app.route('/time', methods=['GET'])
 def get_time():
     # Get the requested time zone from the query parameters
@@ -39,6 +41,14 @@ def get_timezones():
 @app.route('/example', methods=['GET'])
 def get_timezones():
     return "This is an example endpoint!"
+
+@app.route('/random-item', methods=['GET'])
+def get_random_item():
+    if not my_list:
+        return jsonify({'error': 'List is empty'})
+    else:
+        random_item = random.choice(random_items)
+        return jsonify({'random_item': random_item})
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")
