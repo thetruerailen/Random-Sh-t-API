@@ -42,6 +42,14 @@ def get_timezones():
 def get_timezones():
     return "This is an example endpoint!"
 
+@app.route('/ip', methods=['GET'])
+def get_ip():
+  # Get the IP of the requester
+  client_ip = request.headers.get('X-Forwarded-For') or request.headers.get(
+    'X-Real-IP') or request.remote_addr
+  # Return the IP as a JSON response
+  return jsonify({'ip': client_ip})
+
 @app.route('/random-item', methods=['GET'])
 def get_random_item():
     if not my_list:
